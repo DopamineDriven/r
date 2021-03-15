@@ -47,12 +47,11 @@ const SubmissionImage: FC<MediaExtend> = ({
 							>
 								<Image
 									id={id}
-									layout="intrinsic"
+									layout='intrinsic'
 									src={url}
 									objectFit='cover'
 									height={'680'}
 									width={'680'}
-									
 									quality={100}
 									className={cn(
 										'w-full min-w-full h-full min-h-full mx-auto justify-center outline-none focus:outline-none col-span-1 max-w-4xl py-10',
