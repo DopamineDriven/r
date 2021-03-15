@@ -29,11 +29,15 @@ CLIENT_ID=s-G1-cvdAC4PrQ
 REFRESH_TOKEN=616008224518-L9hl9qS4gwggpsRVg-cEzpKJw7HAHw
 NEXT_PUBLIC_USER_AGENT='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.152 Safari/537.36'
 ```
+
 ### Reddit App policy change
+
 - On the weekend of March 12th, Reddit changed their app policy and disallow any apps containing the name `reddit` in them now. Therefore I had to generate new credentials when working with a root `oauth_config.json` file
 
 #### oauth_config.json conundrum
+
 - The oauth_config.json file, when contained in the root, has the following values:
+
 ```json
 {
 	"client_id": "lykrvlrSGp3Uqw",
@@ -42,7 +46,8 @@ NEXT_PUBLIC_USER_AGENT='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/53
 	"user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.152 Safari/537.36"
 }
 ```
-- note how the above values differ from the credentials initially provided? Namely, the client_id and client_secret values. The alteration of the pattern for these raw values may be reflective of the shift in Reddit's policy. 
+
+- note how the above values differ from the credentials initially provided? Namely, the client_id and client_secret values. The alteration of the pattern for these raw values may be reflective of the shift in Reddit's policy.
 
 ![reddit-policy-update](./public/md_assets/reddit_policy_update.jpg)
 
@@ -61,6 +66,7 @@ export const r = new snoowrap(snoowrapOptions);
 ```
 
 - Finally, import the json file into `pages/_app.tsx` as follows
+
 ```tsx
 import '../styles/index.css';
 import '../styles/chrome-bug.css';
@@ -68,14 +74,15 @@ import 'keen-slider/keen-slider.min.css';
 import '../oauth_config.json';
 // ...
 ```
-- While this does allow page-level tests to execute successfully, it interferes with getInitialProps. My next step is to incorporate getInitProps in the _app file in an effort to resolve this problem (it also causes vercel builds to fail). 
+
+- While this does allow page-level tests to execute successfully, it interferes with getInitialProps. My next step is to incorporate getInitProps in the \_app file in an effort to resolve this problem (it also causes vercel builds to fail).
 
 - To get your unique NEXT_PUBLIC_USER_AGENT, follow the instructions [found here in the official Next documentation](https://nextjs.org/docs/api-reference/data-fetching/getInitialProps#typescript)
 
 ### Jest Quirks
 
 - The tests in this repo reside in the root `test` directory. That said, there are some quirks associated with configuring the test suite to run perfectly. Therefore, I will outline how to configure a testing environment since the `snoowrap` library complicates things with its `oauth_info.json` file required for testing. The presence of this file alters the behavior of the snoowrap fetcher. I spent my Saturday and Sunday evenings trying to resolve how exactly my serializations/deserializations in index.tsx and /r/[display_name].tsx were no longer acceptable. It left me a bit baffled, so I grapped the most recent working version from just before adding said config file to the root. I have not added it since yet mimicked all the other changes I made globally. The app still functions as intended, thought it is a bit peculiar that it is throwing an error about `Unexpected token u in JSON at position 0` in JSON _only_ in the presence of said configuration file 🤔
-- This leaves me to believe that it _must_ be a getIntialProps issue, and that having this config file be scooped up by _app and lib/snoo-config alike delays the init population of these values, even if only by 50-100ms. 
+- This leaves me to believe that it _must_ be a getIntialProps issue, and that having this config file be scooped up by \_app and lib/snoo-config alike delays the init population of these values, even if only by 50-100ms.
 
 ### Compiling code
 
@@ -161,4 +168,4 @@ git add . && git commit -m "message"
 
 - In retrospect, I might approach this project with an apollo microserver and apollo client since (a) that's my comfort zone and (b) the reddit api proved less organized than anticipated, so I ended up making custom types regardless. I am glad, however, that I was able to explore handling JSON data in a typescript environment this intricately. The notion of fully utilizing the getStaticProps mediated donation of data from the server to the client via inferring getStaticProps in a more hands-on way intrigued me. That was ultimately my favorite part of this exercise, and it showed in the analytics as far as bundle size and time to first paint are concerned.
 
-![next-analytics](./public/md_assets/next-analytics.jpg)# r
+![next-analytics](./public/md_assets/next-analytics.jpg)

@@ -15,7 +15,7 @@ const Head = () => {
 				<meta property={'og:type'} content='website' />
 				<meta
 					property='og:url'
-					content='https://subreddit.vercel.app'
+					content='https://r-weld.vercel.app'
 				/>
 				<meta property='og:title' content='Subreddit Search' />
 				<meta
