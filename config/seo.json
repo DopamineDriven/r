@@ -1,9 +1,9 @@
 {
 	"title": "Subreddit Search",
 	"description": "Powered by Nextjs, TypeScript, Tailwindcss, Reddit, Vercel, and Snoowrap via Not an Aardvark. /r/q?=req.query.q. Search Reddit in real-time with rapid data-fetching",
-	"canonical": "https://subreddit-search.vercel.app",
+	"canonical": "https://r-weld.vercel.app",
 	"OpenGraph": {
-		"url": "https://subreddit-search.vercel.app",
+		"url": "https://r-weld.vercel.app",
 		"title": "/r/q?=req.query.q",
 		"description": "blazing fast subreddit search app",
 		"site_name": "Subreddit Search App",

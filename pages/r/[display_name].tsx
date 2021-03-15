@@ -209,7 +209,7 @@ export async function getStaticProps(
 	const isDev =
 		process.env.NODE_ENV === 'development'
 			? 'http://localhost:5000'
-			: 'https://subreddit-search.vercel.app';
+			: 'https://r-weld.vercel.app';
 
 	const res = await fetch(
 		`${isDev}/api/snooSubmissions?q=${display_name}`

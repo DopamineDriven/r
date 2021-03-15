@@ -1,7 +1,7 @@
 {
 	"name": "Subreddit Search",
-	"short_name": "/r/",
-	"start_url": "https://subreddit-search.vercel.app",
+	"short_name": "r",
+	"start_url": "https://r-weld.vercel.app",
 	"icons": [
 		{
 			"src": "/assets/android-chrome-192x192.png",

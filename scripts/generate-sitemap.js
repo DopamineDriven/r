@@ -30,7 +30,7 @@ const prettier = require('prettier');
 
 				return `
 					<url>
-						<loc>${`https://subreddit-search.vercel.app${route}`}</loc>
+						<loc>${`https://r-weld.vercel.app${route}`}</loc>
 					</url>
 				`;
 			})

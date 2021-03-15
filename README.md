@@ -1,6 +1,6 @@
 ## Coding Exercise -- Subreddit Search App
 
-## [Deployed App](https://subreddit-search.vercel.app)
+## [Deployed App](https://r-weld.vercel.app)
 
 ## Installing and running this repo
 

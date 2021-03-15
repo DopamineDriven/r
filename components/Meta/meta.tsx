@@ -44,10 +44,7 @@ const MetaData = () => {
 					color='#000000'
 				/>
 				<link rel='shortcut icon' href='/assets/favicon.ico' />
-				<link
-					rel='canonical'
-					href={'https://subreddit-search.vercel.app'}
-				/>
+				<link rel='canonical' href={'https://r-weld.vercel.app'} />
 				<meta name='robots' content='/robots.txt' />
 				<meta
 					name='viewport'
@@ -88,7 +85,7 @@ const MetaData = () => {
 				<meta property='og:type' content='website' />
 				<meta
 					property='og:url'
-					content='https://subreddit-search.vercel.app'
+					content='https://r-weld.vercel.app'
 				/>
 				<meta property='og:title' content='Subreddit Search' />
 				<meta
