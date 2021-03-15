@@ -8,7 +8,7 @@
 			"@/pages/*": ["pages/*"],
 			"@/scripts/*": ["scripts/*"],
 			"@/styles/*": ["styles/*"],
-			"@/tests/*": ["__tests__/*"],
+			"@/test/*": ["test/*"],
 			"@/types/*": ["types/*"]
 		}
 	}
