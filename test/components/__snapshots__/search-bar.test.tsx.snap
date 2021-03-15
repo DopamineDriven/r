@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`searchbar matches snapshot 1`] = `
+<div>
+  <div
+    class="relative bg-accents-1 text-base w-full transition-colors duration-150"
+  >
+    <label
+      class="sr-only"
+      for="r/"
+    >
+      /r/ - search by subreddit name
+    </label>
+    <div
+      class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+    >
+      <span
+        class="text-gray-100 font-semibold sm:text-base"
+      >
+        /r/
+      </span>
+    </div>
+    <label>
+      <input
+        autocapitalize="off"
+        autocomplete="on"
+        autocorrect="off"
+        class="root input"
+        id="r/"
+        name="r/"
+        spellcheck="false"
+        value=""
+      />
+    </label>
+    <div
+      class="iconContainer"
+    >
+      <svg
+        class="icon"
+        fill="rgb(229, 231, 235)"
+        viewBox="0 0 20 20"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+          fill-rule="evenodd"
+        />
+      </svg>
+    </div>
+  </div>
+</div>
+`;

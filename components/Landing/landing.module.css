@@ -1,0 +1,21 @@
+.root {
+	@apply z-50 select-none h-screen mt-4 mb-32;
+	@screen md {
+		@apply mb-8 mt-8;
+	}
+	@screen lg {
+		@apply mb-0 mt-4;
+	}
+}
+
+.alpha {
+	@apply items-center content-center justify-center block min-w-full w-screen mx-auto;
+}
+
+.beta {
+	@apply content-center justify-center block mx-auto;
+}
+
+.gamma {
+	@apply content-center justify-center mx-auto gap-x-12 w-full;
+}

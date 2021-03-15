@@ -1,0 +1,19 @@
+.linkActive {
+	@apply px-3 py-2 text-xl text-gray-300;
+	&:hover {
+		@apply text-gray-400;
+	}
+	@screen lg {
+		@apply text-2xl;
+	}
+}
+
+.link {
+	@apply px-3 py-2 rounded-md text-xl text-gray-100;
+	&:hover {
+		@apply text-gray-200;
+	}
+	@screen lg {
+		@apply text-2xl;
+	}
+}

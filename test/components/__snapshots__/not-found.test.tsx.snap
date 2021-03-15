@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a not found 404 page 1`] = `
+<div>
+  <div
+    class="text-center text-3xl text-gray-300 m-auto space-y-4 pb-12 "
+  >
+    <p>
+      Not Amaze. Many 
+      <a
+        class="wow"
+        href="/"
+      >
+        Return Home
+      </a>
+      .
+    </p>
+    <div>
+      <div
+        style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+      >
+        <div
+          style="box-sizing: border-box; display: block; max-width: 100%;"
+        >
+          <img
+            alt=""
+            aria-hidden="true"
+            role="presentation"
+            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjcyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+            style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
+          />
+        </div>
+        <img
+          alt="wow. not found."
+          aria-orientation="vertical"
+          decoding="async"
+          src="/_next/image?url=%2Fdoge-404.jpg&w=1080&q=75"
+          srcset="/_next/image?url=%2Fdoge-404.jpg&w=640&q=75 1x, /_next/image?url=%2Fdoge-404.jpg&w=1080&q=75 2x"
+          style="visibility: inherit; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

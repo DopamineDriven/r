@@ -1,0 +1,49 @@
+.prose div > ul > li {
+	@apply bg-gray-100 list-none;
+}
+
+.prose li {
+	@apply list-none;
+	&::before {
+		@apply list-none bg-gray-50 fill-current;
+	}
+}
+
+.videowrapper {
+	max-height: 45vh;
+	@screen md {
+		max-height: 50vh;
+	}
+}
+
+.h2 blockquote > h2 > strong {
+	@apply text-gray-700;
+}
+
+.h4 div > h4 {
+	@apply prose-lg;
+}
+
+.p div > p {
+	@apply prose-sm text-sm flex-wrap max-w-2xl;
+}
+
+.p pre code {
+	@apply overflow-x-hidden;
+}
+
+.p * > pre > code {
+	@apply overflow-x-hidden max-w-3xl;
+}
+
+.prose pre {
+	@apply bg-gray-50 border border-gray-200;
+}
+
+.prose code {
+	@apply text-gray-800 px-1 py-0.5 border border-gray-100 rounded-md bg-gray-100;
+}
+
+.prose img {
+	@apply m-0;
+}
