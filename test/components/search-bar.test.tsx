@@ -1,6 +1,5 @@
 import React from 'react';
 import Searchbar from '../../components/Searchbar/Searchbar';
-
 import { render } from '@testing-library/react';
 import { mockNextUseRouter } from '../testUtils';
 

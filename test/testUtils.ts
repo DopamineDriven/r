@@ -21,7 +21,6 @@ const Providers = ({
 };
 
 // mocks snoowrap
-// const snoowrap = jest.spyOn(require('snoowrap'), 'Snoowrap');
 export class mockSnoowrap {}
 ({
 	clientId,
@@ -36,12 +35,12 @@ export class mockSnoowrap {}
 		userAgent
 	});
 
+// Mocks useRouter
 type PrefetchOptions = {
 	priority?: boolean;
 	locale?: string | false;
 };
 
-// Mocks useRouter
 const useRouter = jest.spyOn(
 	require('next/router'),
 	'useRouter'

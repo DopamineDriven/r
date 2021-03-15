@@ -40,7 +40,7 @@
 			"@/pages/*": [
 				"pages/*"
 			],
-			"@/scripts/": [
+			"@/scripts/*": [
 				"scripts/*"
 			],
 			"@/styles/*": [
