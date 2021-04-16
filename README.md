@@ -1,5 +1,3 @@
-## Coding Exercise -- Subreddit Search App
-
 ## [Deployed App](https://r-weld.vercel.app)
 
 ## Installing and running this repo
@@ -21,15 +19,6 @@
 - when registering your app, be sure to set the redirect uri to https://not-an-aardvark.github.io/reddit-oauth-helper/
 - This is to use snoowrap Oauth helper for generating a token using the clientID and clientSecret generated from signing up
 
-### However, since this is a private repo the credentials are included below for convenience sake
-
-```s
-CLIENT_SECRET=MhuYWSXB3Pe_2As2r1jwvtsPp851aw
-CLIENT_ID=s-G1-cvdAC4PrQ
-REFRESH_TOKEN=616008224518-L9hl9qS4gwggpsRVg-cEzpKJw7HAHw
-NEXT_PUBLIC_USER_AGENT='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.152 Safari/537.36'
-```
-
 ### Reddit App policy change
 
 - On the weekend of March 12th, Reddit changed their app policy and disallow any apps containing the name `reddit` in them now. Therefore I had to generate new credentials when working with a root `oauth_config.json` file
@@ -40,9 +29,9 @@ NEXT_PUBLIC_USER_AGENT='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/53
 
 ```json
 {
-	"client_id": "lykrvlrSGp3Uqw",
-	"client_secret": "hDktHgBwsAFN1Jgd7L8UsgQjQ2YzUg",
-	"refresh_token": "616008224518-a9qeSovoFl7z2fEg0jkc7bKsiWD09w",
+	"client_id": "xxxxxxxx",
+	"client_secret": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+	"refresh_token": "xxxxxxxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxx",
 	"user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.152 Safari/537.36"
 }
 ```
@@ -84,6 +73,16 @@ import '../oauth_config.json';
 - The tests in this repo reside in the root `test` directory. That said, there are some quirks associated with configuring the test suite to run perfectly. Therefore, I will outline how to configure a testing environment since the `snoowrap` library complicates things with its `oauth_info.json` file required for testing. The presence of this file alters the behavior of the snoowrap fetcher. I spent my Saturday and Sunday evenings trying to resolve how exactly my serializations/deserializations in index.tsx and /r/[display_name].tsx were no longer acceptable. It left me a bit baffled, so I grapped the most recent working version from just before adding said config file to the root. I have not added it since yet mimicked all the other changes I made globally. The app still functions as intended, thought it is a bit peculiar that it is throwing an error about `Unexpected token u in JSON at position 0` in JSON _only_ in the presence of said configuration file 🤔
 - This leaves me to believe that it _must_ be a getIntialProps issue, and that having this config file be scooped up by \_app and lib/snoo-config alike delays the init population of these values, even if only by 50-100ms.
 
+### JEST UPDATE -- 04/15/21
+- simply add this code to the top of the `test/testUtil.ts` file for seamless .env.testing support
+```ts
+import { loadEnvConfig } from '@next/env';
+
+export default async () => {
+	const projectDir = process.cwd();
+	loadEnvConfig(projectDir);
+};
+```
 ### Compiling code
 
 - To compile the code, run
@@ -128,7 +127,7 @@ git add . && git commit -m "message"
 
 ### Pagination
 
-- I attempted many methods regarding pagination, everything from custom approaches to SWR hooks to smuggling a `fetchMore` handler from getStaticProps into the client -- none of which succeeded
+- I attempted many methods regarding pagination, everything from custom approaches to SWR hooks to smuggling a `fetchMore` handler from getStaticProps into the client -- none of which succeeded when using getStaticProps+ISR -- something I was determined to achieve. However. I am currently implementing a SSR approach using react-pagination and that should be live soon (the latter being the method defaulted to for the sake of simplicity). 
 - _That said_, I was able to achieve "pagination" with `Keen Slider`, though that made for a less than ideal UX especially on mobile as all 10 of the displayed posts could be swiped from side to side, often with little effort. If you import Keenslider into `pages/r/[display_name].tsx` and wrap the submissions as follows
 
 ```tsx
