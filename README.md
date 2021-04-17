@@ -4,6 +4,10 @@
 
 - Install the dependencies in this repo with yarn. I left husky in rather than adding it to the .gitignore file as the transition from v4-v5 occurred about a week ago (now shell scripted rather than written as a hook in package.json).
 
+## Many Thanks to `Stargazers` tossing this repo stars(⭐)
+
+[![Stargazers repo roster for @DopamineDriven/nextjs-analytics](https://reporoster.com/stars/DopamineDriven/r)](https://github.com/DopamineDriven/r/stargazers)
+
 ## Use [Snoowrap](https://github.com/not-an-aardvark/snoowrap) api for node
 
 - https://www.reddit.com/dev/api/#GET_subreddits_popular
